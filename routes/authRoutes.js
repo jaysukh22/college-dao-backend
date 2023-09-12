@@ -74,10 +74,10 @@ router.post("/login", async (req, res) => {
     if (!user.validPassword(password)) {
       return res.status(400).json({ error: "Incorrect password" });
     }
-    if (user.status === "notVerify")
-      return res
-        .status(404)
-        .json({ error: "please verify your email address" });
+    // if (user.status === "notVerify")
+    //   return res
+    //     .status(404)
+    //     .json({ error: "please verify your email address" });
 
     // Create and send the JWT token
     jwt.sign(
